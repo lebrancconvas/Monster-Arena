@@ -14,7 +14,13 @@ const App: React.FC = () => {
     <div>
       <MonsterTitle monsterTitle={monsterName} />
       <button onClick={() => changeMonsterTitle("Derek")}>
-        Change Name
+        Derek
+      </button>
+      <button onClick={() => changeMonsterTitle("Jenois")}>
+        Jenois
+      </button>
+      <button onClick={() => changeMonsterTitle("Trashster")}>
+        Trashster
       </button>
     </div>
   )
