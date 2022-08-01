@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { monsterNameState } from '../lib/atoms';
 import MonsterTitle from '../components/MonsterTitle';
@@ -13,6 +13,10 @@ const MonsterSelect: React.FC = () => {
     window.localStorage.setItem('MONSTER_STORAGE', JSON.stringify(monster)); 
     setMonsterName(monster);
   }
+
+  useEffect(() => {
+    window.localStorage.clear();
+  }, []); 
 
   return(
     <div>
