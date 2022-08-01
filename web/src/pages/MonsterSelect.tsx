@@ -10,15 +10,16 @@ const MonsterSelect: React.FC = () => {
   const [monsterName, setMonsterName] = useRecoilState(monsterNameState);
 
   const changeMonsterTitle = (monster: string) => {
+    window.localStorage.setItem('MONSTER_STORAGE', JSON.stringify(monster)); 
     setMonsterName(monster);
   }
 
   return(
     <div>
       <MonsterTitle monsterTitle={monsterName} />
-      {monsterList.map((monster) => {
+      {monsterList.map((monster, index: number) => {
         return(
-          <MonsterButton onClick={() => changeMonsterTitle(`${monster}`)}>
+          <MonsterButton onClick={() => changeMonsterTitle(`${monster}`)} key={index}> 
             <WhiteFont>
               {monster}
             </WhiteFont>

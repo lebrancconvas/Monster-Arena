@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { monsterNameState } from '../lib/atoms';
 import { SubmitButton } from '../style/Button.style';
 import { Link } from 'react-router-dom';
+import { useSessionStorage } from 'usehooks-ts'; 
 
 const MonsterArena: React.FC = () => {
 	const [monsterName, setMonsterName] = useRecoilState(monsterNameState);
+
+	// Getter
+	useEffect(() => {
+		const data = window.localStorage.getItem('MONSTER_STORAGE');
+		if(data !== null) setMonsterName(data.slice(1, -1)); 
+	}, []);
+
+	// Setter 
+	// useEffect(() => {
+	// 	window.localStorage.setItem('MONSTER_STORAGE', JSON.stringify(monsterName));
+	// }, [monsterName]); 
 
 	const ElementArena = () => {
 		if(monsterName === 'Unknown') {
@@ -33,7 +45,7 @@ const MonsterArena: React.FC = () => {
 					</header>
 					<section id="arena">
 						<div>
-							<h2>Player 1: {monsterName}</h2>
+							<h2>Player 1: {monsterName}</h2> 
 						</div>
 					</section>
 				</div>
