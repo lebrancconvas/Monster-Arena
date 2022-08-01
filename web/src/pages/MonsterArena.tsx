@@ -4,6 +4,7 @@ import { monsterNameState } from '../lib/atoms';
 import { SubmitButton } from '../style/Button.style';
 import { Link } from 'react-router-dom';
 import { useSessionStorage } from 'usehooks-ts'; 
+import { monsterList } from '../data/monsterList';
 
 const MonsterArena: React.FC = () => {
 	const [monsterName, setMonsterName] = useRecoilState(monsterNameState);
@@ -45,7 +46,13 @@ const MonsterArena: React.FC = () => {
 					</header>
 					<section id="arena">
 						<div>
-							<h2>Player 1: {monsterName}</h2> 
+							<h2>Player 1 (You): {monsterName}</h2> 
+						</div>
+						<div>
+							<h2>Player 2 (CPU): {monsterList[Math.floor(Math.random() * monsterList.length)]}</h2>  
+						</div>
+						<div>
+							<h3>Refresh to random new CPU's Character</h3>
 						</div>
 					</section>
 				</div>
