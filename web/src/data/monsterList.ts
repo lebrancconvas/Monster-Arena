@@ -3,5 +3,8 @@ export const monsterList: string[] = [
 	"Jenois",
 	"Trashster",
 	"Alan Keene",
-	"Super Palmer" 
+	"Super Palmer",
+	"Sendai",
+	"Dojo Wayu",
+	"Super Middle Man" 
 ];
