@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { monsterNameState } from '../lib/atoms';
 import { SubmitButton } from '../style/Button.style';
@@ -8,6 +8,11 @@ import { monsterList } from '../data/monsterList';
 
 const MonsterArena: React.FC = () => {
 	const [monsterName, setMonsterName] = useRecoilState(monsterNameState);
+	const [enemyMonsterName, setEnemyMonsterName] = useState<string>('Unknown');
+
+	const randomCPU = (): void => {
+		setEnemyMonsterName(monsterList[Math.floor(Math.random() * (monsterName.length - 1))]); 
+	}
 
 	// Getter
 	useEffect(() => {
@@ -49,10 +54,12 @@ const MonsterArena: React.FC = () => {
 							<h2>Player 1 (You): {monsterName}</h2> 
 						</div>
 						<div>
-							<h2>Player 2 (CPU): {monsterList[Math.floor(Math.random() * monsterList.length)]}</h2>  
+							<h2>Player 2 (CPU): {enemyMonsterName}</h2>  
 						</div>
-						<div>
-							<h3>Refresh to random new CPU's Character</h3>
+						<div id="controller">
+							<button onClick={randomCPU}>
+								Random CPU
+							</button>
 						</div>
 					</section>
 				</div>
