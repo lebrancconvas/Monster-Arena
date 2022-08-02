@@ -12,7 +12,7 @@ Playground Project for gaining the experience about
 
 - Clone this repository.
 
-- If you didn't have 'pnpm'. Please install via [this guide](https://pnpm.io/installation).
+- If you didn't have `pnpm`. Please install via [this guide](https://pnpm.io/installation).
 
 - `cd web`
 
