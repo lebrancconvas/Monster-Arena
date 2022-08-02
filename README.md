@@ -10,7 +10,9 @@ Playground Project for gaining the experience about
 
 ## Setup
 
-- Clone the repository.
+- Clone this repository.
+
+- If you didn't have 'pnpm'. Please install via [this guide](https://pnpm.io/installation).
 
 - `cd web`
 
@@ -18,4 +20,4 @@ Playground Project for gaining the experience about
 
 - `pnpm run dev`
 
-The Project is on [http://localhost:3300/](http://localhost:3300/)
+The Project is running on [http://localhost:3300/](http://localhost:3300/).
