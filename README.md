@@ -8,6 +8,16 @@ Playground Project for gaining the experience about
 
 - Local Storage Management
 
+## Tech Stack / Tools
+
+- React
+
+- Recoil
+
+- Vite
+
+- Flaticon
+
 ## Setup
 
 - Clone this repository.
