@@ -10,6 +10,8 @@ Playground Project for gaining the experience about
 
 ## Setup
 
+- Clone the repository.
+
 - `cd web`
 
 - `pnpm install` or `pnpm i`
